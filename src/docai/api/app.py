@@ -2,8 +2,11 @@
 import io
 import os
 
+from dotenv import load_dotenv
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import HTMLResponse, StreamingResponse
+
+load_dotenv()  # reads .env from the project root
 
 from docai.core.exporter import invoices_to_xlsx
 from docai.core.preprocess import PreprocessError, prepare_image
